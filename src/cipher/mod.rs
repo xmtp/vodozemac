@@ -105,7 +105,6 @@ impl Cipher {
         Self { keys }
     }
 
-    #[cfg(feature = "libolm-compat")]
     pub fn new_pickle(key: &[u8]) -> Self {
         let keys = CipherKeys::new_pickle(key);
 

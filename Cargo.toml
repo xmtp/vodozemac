@@ -17,7 +17,7 @@ all-features = true
 rustdoc-args = ["--cfg", "docsrs"]
 
 [features]
-default = ["libolm-compat"]
+default = []
 strict-signatures = []
 libolm-compat = []
 # The low-level-api feature exposes extra APIs that are only useful in advanced

@@ -565,6 +565,7 @@ mod test {
         Ok(())
     }
 
+    #[cfg(feature = "libolm-compat")]
     #[test]
     fn calculate_mac_invalid_base64() -> Result<()> {
         let mut olm = OlmSas::new();
