@@ -423,16 +423,8 @@ mod libolm {
     use matrix_pickle::{Decode, DecodeError};
     use zeroize::Zeroize;
 
-    use super::{
-        fallback_keys::{FallbackKey, FallbackKeys},
-        one_time_keys::OneTimeKeys,
-        Account,
-    };
-    use crate::{
-        types::{Curve25519Keypair, Curve25519SecretKey},
-        utilities::LibolmEd25519Keypair,
-        Ed25519Keypair, KeyId,
-    };
+    use super::fallback_keys::FallbackKey;
+    use crate::{types::Curve25519SecretKey, utilities::LibolmEd25519Keypair, KeyId};
 
     #[derive(Debug, Zeroize, Decode)]
     #[zeroize(drop)]
@@ -546,7 +538,7 @@ mod test {
             messages::{OlmMessage, PreKeyMessage},
             AccountPickle,
         },
-        run_corpus, Curve25519PublicKey as PublicKey,
+        Curve25519PublicKey as PublicKey,
     };
 
     const PICKLE_KEY: [u8; 32] = [0u8; 32];

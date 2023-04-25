@@ -19,7 +19,7 @@ use hmac::digest::MacError;
 use serde::{Deserialize, Serialize};
 use subtle::ConstantTimeEq;
 use thiserror::Error;
-use zeroize::Zeroize;
+// use zeroize::Zeroize;
 
 use super::{
     default_config,

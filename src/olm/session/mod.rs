@@ -30,7 +30,7 @@ use receiver_chain::ReceiverChain;
 use root_key::RemoteRootKey;
 use serde::{Deserialize, Serialize};
 use thiserror::Error;
-use zeroize::Zeroize;
+// use zeroize::Zeroize;
 
 use super::{
     session_config::Version,

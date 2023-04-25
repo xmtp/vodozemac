@@ -22,7 +22,7 @@ use ed25519_dalek::{
 use rand::thread_rng;
 use serde::{Deserialize, Serialize};
 use thiserror::Error;
-use zeroize::Zeroize;
+// use szeroize::Zeroize;
 
 use crate::{
     utilities::{base64_decode, base64_encode},
