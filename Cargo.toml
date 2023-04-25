@@ -33,8 +33,8 @@ aes = "0.8.1"
 arrayvec = { version = "0.7.2", features = ["serde"] }
 base64 = "0.13.0"
 cbc = { version = "0.1.2", features = ["std"] }
-ed25519-dalek = { version = "1.0.1", default-features = false, features = [
-    "rand",
+ed25519-dalek = { version = "2.0.0-rc.2", default-features = false, features = [
+    "rand_core",
     "std",
     "serde",
 ] }
@@ -49,7 +49,7 @@ serde_json = "1.0.79"
 sha2 = "0.10.2"
 subtle = "2.4.1"
 thiserror = "1.0.30"
-x25519-dalek = { version = "1.2.0", features = ["serde", "reusable_secrets"] }
+x25519-dalek = { version = "2.0.0-pre.1", features = ["serde", "reusable_secrets","static_secrets"] }
 zeroize = "1.3.0"
 
 [dev-dependencies]
