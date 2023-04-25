@@ -55,4 +55,6 @@ pub enum KeyError {
     /// resulting shared secret would have been insecure.
     #[error("At least one of the keys did not have contributory behaviour")]
     NonContributoryKey,
+    #[error("Unknown error")]
+    Unknown,
 }
