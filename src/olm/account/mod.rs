@@ -20,7 +20,7 @@ use std::collections::HashMap;
 use rand::thread_rng;
 use serde::{Deserialize, Serialize};
 use thiserror::Error;
-use x25519_dalek::ReusableSecret;
+use x25519_dalek::{PublicKey as Dalek25519PublicKey, ReusableSecret, SharedSecret};
 
 use self::{
     fallback_keys::FallbackKeys,
@@ -338,6 +338,12 @@ impl Account {
     /// Restore an [`Account`] from a previously saved [`AccountPickle`].
     pub fn from_pickle(pickle: AccountPickle) -> Self {
         pickle.into()
+    }
+
+    pub fn diffie_hellman(&self, public_key: &Dalek25519PublicKey) -> SharedSecret {
+        self.diffie_hellman_key
+            .secret_key()
+            .diffie_hellman(&Curve25519PublicKey { inner: *public_key })
     }
 
     /// Create an [`Account`] object by unpickling an account pickle in libolm
